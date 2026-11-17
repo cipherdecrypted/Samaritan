@@ -18,7 +18,7 @@ if not exist ".venv\Scripts\python.exe" (
 )
 
 echo Installing packages...
-".venv\Scripts\python.exe" -m pip install -q --disable-pip-version-check --upgrade pip || exit /b 1
+".venv\Scripts\python.exe" -m pip --version >nul 2>&1 || ".venv\Scripts\python.exe" -m ensurepip --upgrade >nul || exit /b 1
 ".venv\Scripts\python.exe" -m pip install -q --disable-pip-version-check -r requirements.txt || exit /b 1
 
 ".venv\Scripts\python.exe" tools\setup_models.py %* || exit /b 1
