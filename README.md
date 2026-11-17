@@ -18,11 +18,12 @@ Gotham.bat --windowed                       borderless window instead of fullscr
 Setup (Windows, Python 3.12, a DirectX 12 GPU):
 
 ```
-python -m venv .venv
-.venv\Scripts\pip install -r requirements.txt
+setup.bat
 ```
 
-Model files go in `models/` (see `LICENSES/NOTICE.md` for the list).
+It creates the environment, installs the packages, downloads every model from its official source (each checked
+against a fixed SHA-256) and builds the GothamFaces model files. The build step uses a temporary environment that is
+removed afterwards. About 1.2 GB of downloads; run it again at any time to repair a missing or damaged file.
 
 ## What it does
 

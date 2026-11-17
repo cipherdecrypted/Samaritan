@@ -8,8 +8,9 @@ import onnx
 from onnx import helper, numpy_helper
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "models" / "w600k_r50.onnx"
-DST = ROOT / "models" / "w600k_r50_batch.onnx"
+MODELS = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "models"
+SRC = MODELS / "w600k_r50.onnx"
+DST = MODELS / "w600k_r50_batch.onnx"
 
 
 def convert():
