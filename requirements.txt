@@ -1,0 +1,7 @@
+PySide6==6.12.0
+opencv-contrib-python==5.0.0.93
+mediapipe==1.2.3
+onnxruntime-directml==1.24.4
+numpy==2.5.4
+psutil==7.2.2
+anthropic==2.8.0

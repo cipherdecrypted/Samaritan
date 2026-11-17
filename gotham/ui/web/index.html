@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gotham</title>
+  <link rel="stylesheet" href="assets/css/poi.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <aside id="left" class="pane">
+      <div class="pane-inner">
+        <div class="brand"><span class="invert pad">SAMARITAN</span> <span class="ver">v.GOTHAM 0.1</span></div>
+        <div class="modes">
+          <span class="mode on" data-mode="live">LIVE</span>
+          <span class="mode" data-mode="images">IMAGES</span>
+          <span class="mode" data-mode="memory">MEMORY</span>
+        </div>
+
+        <div class="section live-only">
+          <div class="sec-title">INPUT_FEEDS <span class="act" data-action="rescan">[RESCAN]</span></div>
+          <div id="sources"></div>
+          <div class="btnrow">
+            <span class="btn" data-action="add_stream">+ STREAM</span>
+            <span class="btn" data-action="add_file">+ VIDEO</span>
+          </div>
+        </div>
+
+        <div class="section images-only">
+          <div class="sec-title">IMAGE_ARCHIVE</div>
+          <div class="btnrow">
+            <span class="btn" data-action="open_images">+ IMAGES</span>
+            <span class="btn" data-action="open_folder">+ FOLDER</span>
+            <span class="btn" data-action="clear_images">CLEAR</span>
+          </div>
+          <div id="imagelist"></div>
+        </div>
+
+        <div class="section">
+          <div class="sec-title">FACE_MEMORY</div>
+          <div id="memsum" class="mini"></div>
+        </div>
+
+        <div class="section">
+          <div class="sec-title">DISPLAY_LAYERS</div>
+          <div id="layers"></div>
+        </div>
+
+        <div class="section grow">
+          <div class="sec-title">SYS.ONLINE</div>
+          <div id="system" class="mini"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main id="center">
+      <div id="voice">
+        <div id="message-container"><p>&nbsp;</p><hr></div>
+        <div id="message-marker"><span id="triangle"></span></div>
+        <div id="voice-status"></div>
+      </div>
+      <div id="hole"><div id="memview"></div></div>
+      <div id="cmd">
+        <span id="cmd-label" class="invert pad">WHAT ARE YOUR COMMANDS ?</span>
+        <input id="cmd-input" type="text" spellcheck="false" autocomplete="off">
+      </div>
+    </main>
+
+    <aside id="right" class="pane">
+      <div class="pane-inner" id="right-inner">
+        <div id="feedblock"></div>
+        <div id="subjects"></div>
+        <div id="inspector"></div>
+        <div id="lab"></div>
+        <div id="persondetail"></div>
+        <div class="section grow" id="logsec">
+          <div class="sec-title">RESOLVING.TRACK</div>
+          <div id="log" class="mini"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="alertbox" class="hidden">
+    <div class="ab-title"></div>
+    <div class="ab-text"></div>
+    <div class="ab-footer"></div>
+  </div>
+
+  <div id="boot">
+    <div id="boot-center">
+      <div id="boot-log"></div>
+      <div id="loading-pane-container">
+        <div id="loading-pane">
+          <span class="invert">LOADING <span class="blink">_</span> </span><br>
+          <span id="loading-name">resources.models</span>
+          <div id="loading-bar-container"><div id="loading-bar"></div></div>
+        </div>
+      </div>
+      <div id="loading-connected"><span class="invert">CONNECTION ESTABLISHED</span></div>
+    </div>
+    <div id="boot-left"></div>
+    <div id="boot-right"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
